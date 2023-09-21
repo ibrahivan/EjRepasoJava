@@ -144,9 +144,9 @@ public class ImplEmpleado implements InterfazEmpleado {
 						fichero = new FileWriter("C:\\zDatosPruebas\\empleadosJava.txt");
 						pw = new PrintWriter(fichero);
 						pw.println(
-								"\n\t\t Id empleado || Nombre  ||  Apellidos  || DNI  || Fecha nacimiento  || Titulación ");
+								"\n\t\t Id empleado || Nombre  ||  Apellidos  ||    DNI    || Fecha nacimiento  || Titulación ");
 
-						pw.printf("\n\t\t      %d %s %s %s %d/%d/%d %s", listE.get(j).getId(), listE.get(j).getNombre(),
+						pw.printf("\n\t\t %6d  %15s  %10s     %10s      %02d/%02d/%04d     %16s  ", listE.get(j).getId(), listE.get(j).getNombre(),
 								listE.get(j).getApellido(), listE.get(j).getdNI(), listE.get(j).getDia(),
 								listE.get(j).getMes(), listE.get(j).getAnyo(), listE.get(j).getTitulacion());
 
@@ -179,9 +179,9 @@ public class ImplEmpleado implements InterfazEmpleado {
 			try {
 				f = new FileWriter("C:\\zDatosPruebas\\empleadosJava.txt");
 				pw1 = new PrintWriter(f);
-				pw1.println("\n\t\t Id empleado || Nombre  ||  Apellidos  || DNI  || Fecha nacimiento  || Titulación ");
+				pw1.println("\n\t\t Id empleado ||  Nombre  ||  Apellidos  ||    DNI    || Fecha nacimiento  || Titulación  ");
 				for (int k = 0; k < listE.size(); k++) {
-					pw1.printf("\n\t\t      %d %s %s %s %d/%d/%d %s", listE.get(k).getId(), listE.get(k).getNombre(),
+					pw1.printf("\n\t\t %6d  %15s  %10s     %10s      %02d/%02d/%04d     %16s  ", listE.get(k).getId(), listE.get(k).getNombre(),
 							listE.get(k).getApellido(), listE.get(k).getdNI(), listE.get(k).getDia(),
 							listE.get(k).getMes(), listE.get(k).getAnyo(), listE.get(k).getTitulacion());
 				}
@@ -270,11 +270,15 @@ public class ImplEmpleado implements InterfazEmpleado {
 
 	public static void mostrarEmpleados(List<Empleado> listE) {
 		System.out.println(
-				"\n\t\t Id empleado || Nombre  ||  Apellidos  || DNI  || Fecha nacimiento  || Titulación  ||  Nº Seg Social  || Nº Cuenta  ");
+				"\n\t\t Id empleado || Nombre  ||  Apellidos  ||    DNI    || Fecha nacimiento  || Titulación  ||  Nº Seg Social  || Nº Cuenta  ");
 		for (Empleado empleado : listE) {
-			System.out.printf("\n\t\t      %d %s %s %s %d/%d/%d %s %d %d", empleado.getId(), empleado.getNombre(),
-					empleado.getApellido(), empleado.getdNI(), empleado.getDia(), empleado.getMes(), empleado.getAnyo(),
-					empleado.getTitulacion(), empleado.getnSS(), empleado.getnCuenta());
+			System.out.printf("\n\t %12d %15s  %13s    %11s      %02d/%02d/%04d   %16s  %14d  %14d",
+					empleado.getId(), empleado.getNombre(), empleado.getApellido(), empleado.getdNI(),
+					empleado.getDia(), empleado.getMes(), empleado.getAnyo(), empleado.getTitulacion(),
+					empleado.getnSS(), empleado.getnCuenta());
 		}
 	}
+
+	
+
 }
