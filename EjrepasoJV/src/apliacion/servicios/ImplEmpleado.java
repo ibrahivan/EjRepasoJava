@@ -1,5 +1,8 @@
 package apliacion.servicios;
-
+/*
+ * Implementacion de la clase empleado
+author:ivan vazquez
+*/
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.List;
@@ -10,6 +13,7 @@ import aplicacion.entidad.Empleado;
 
 public class ImplEmpleado implements InterfazEmpleado {
 
+	//Metodo que usamos para registrar el usuario
 	@Override
 	public List<Empleado> registroEmpleado(List<Empleado> listE) {
 		// TODO Auto-generated method stub
@@ -47,6 +51,7 @@ public class ImplEmpleado implements InterfazEmpleado {
 		return listE;
 	}
 
+	//Metodo para modificar a los empleados
 	@Override
 	public List<Empleado> modificarEmpleado(List<Empleado> listE) {
 		// TODO Auto-generated method stub
@@ -55,7 +60,7 @@ public class ImplEmpleado implements InterfazEmpleado {
 		mostrarEmpleados(listE);
 		// Preguntar si se desea modificar algún empleado
 		boolean p = PreguntaSiNo("\tDesea modificar algun empleado");
-
+		//Seleccionamos el empleado y modificamos el dato que desea el usuario
 		while (p) {
 			Scanner scanner = new Scanner(System.in);
 			System.out.print("\n\t¿Qué empleado desea modificar? Seleccione por ID: ");
@@ -112,13 +117,14 @@ public class ImplEmpleado implements InterfazEmpleado {
 					break;
 				}
 			}
+			//Si no existe el empleado damos el mensaje de error
 			if (!existe)
 				System.out.println("\n\t**Empleado no existe**");
 			p = PreguntaSiNo("\t¿Desea modificar algun dato?");
 		}
 		return listE;
 	}
-
+	//Metodo de exportar los datos a fichero
 	@Override
 	public void exportarFich(List<Empleado> listE) {
 		// TODO Auto-generated method stub
@@ -132,7 +138,7 @@ public class ImplEmpleado implements InterfazEmpleado {
 			PrintWriter pw = null;
 			// mostramos los empleadps
 			mostrarEmpleados(listE);
-			// seleccionamos cual quiero exportar
+			// seleccionamos que empleado quiere exportar
 			System.out.print("\n\t¿Qué empleado desea exportar al fichero? Seleccione por ID: ");
 			Scanner scanner = new Scanner(System.in);
 			int id = scanner.nextInt();
@@ -173,6 +179,7 @@ public class ImplEmpleado implements InterfazEmpleado {
 			break;
 
 		case 2:
+			// lo mismo pero si escoge todos los usuarios
 			FileWriter f = null;
 			PrintWriter pw1 = null;
 
@@ -203,7 +210,7 @@ public class ImplEmpleado implements InterfazEmpleado {
 		}
 
 	}
-
+	//metodo captura entero para los errores al captar numeros
 	public int CapturaEntero(String mensaje, int min, int max) {
 		Scanner sc = new Scanner(System.in);
 
@@ -218,7 +225,7 @@ public class ImplEmpleado implements InterfazEmpleado {
 		return opcion;
 
 	}
-
+	//metodo para preguntar si queiere editar algun dato
 	public boolean PreguntaSiNo(String p) {
 		boolean respuesta = false;
 		char tecla;
@@ -267,7 +274,7 @@ public class ImplEmpleado implements InterfazEmpleado {
 		System.out.println("\n\t\t9. Número de cuenta.");
 		System.out.println("\n\t\t0. Salir.");
 	}
-
+	//metodo de mostrar empleados
 	public static void mostrarEmpleados(List<Empleado> listE) {
 		System.out.println(
 				"\n\t\t Id empleado || Nombre  ||  Apellidos  ||    DNI    || Fecha nacimiento  || Titulación  ||  Nº Seg Social  || Nº Cuenta  ");

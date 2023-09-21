@@ -1,5 +1,8 @@
 package aplicacion.controlador;
-
+/*
+ * Clase principal
+author:ivan vazquez
+*/
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;

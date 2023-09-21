@@ -1,5 +1,8 @@
 package apliacion.servicios;
-
+/*
+ * Interfaz del metodo de empleado
+author:ivan vazquez
+*/
 import java.util.List;
 
 import aplicacion.entidad.Empleado;

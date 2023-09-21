@@ -1,5 +1,9 @@
 package aplicacion.entidad;
 
+/*
+ * Interfaz que define la clase Empleado
+author:ivan vazquez
+*/
 public class Empleado {
 
 	// Atributos

@@ -1,5 +1,8 @@
 package apliacion.servicios;
-
+/*
+ * Implemenacion del menu
+author:ivan vazquez
+*/
 public class ImplMenu implements InterfazMenu {
 
 	public void mostrarMenu() {
