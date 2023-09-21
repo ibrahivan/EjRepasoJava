@@ -127,12 +127,12 @@ public class ImplEmpleado implements InterfazEmpleado {
 		switch (opcion) {
 
 		case 1:
-			//Abrimos fichero
+			// Abrimos fichero
 			FileWriter fichero = null;
 			PrintWriter pw = null;
-			//mostramos los empleadps
+			// mostramos los empleadps
 			mostrarEmpleados(listE);
-			//seleccionamos cual quiero exportar
+			// seleccionamos cual quiero exportar
 			System.out.print("\n\t¿Qué empleado desea exportar al fichero? Seleccione por ID: ");
 			Scanner scanner = new Scanner(System.in);
 			int id = scanner.nextInt();
@@ -145,12 +145,10 @@ public class ImplEmpleado implements InterfazEmpleado {
 						pw = new PrintWriter(fichero);
 						pw.println(
 								"\n\t\t Id empleado || Nombre  ||  Apellidos  || DNI  || Fecha nacimiento  || Titulación ");
-						
-							pw.printf("\n\t\t      %d %s %s %s %d/%d/%d %s", listE.get(j).getId(),
-									listE.get(j).getNombre(), listE.get(j).getApellido(), listE.get(j).getdNI(),
-									listE.get(j).getDia(), listE.get(j).getMes(), listE.get(j).getAnyo(),
-									listE.get(j).getTitulacion());
-						
+
+						pw.printf("\n\t\t      %d %s %s %s %d/%d/%d %s", listE.get(j).getId(), listE.get(j).getNombre(),
+								listE.get(j).getApellido(), listE.get(j).getdNI(), listE.get(j).getDia(),
+								listE.get(j).getMes(), listE.get(j).getAnyo(), listE.get(j).getTitulacion());
 
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -170,7 +168,7 @@ public class ImplEmpleado implements InterfazEmpleado {
 				}
 
 			}
-			if(!existe)
+			if (!existe)
 				System.out.println("\n\t**Empleado no existe**");
 			break;
 

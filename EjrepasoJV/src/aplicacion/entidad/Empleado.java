@@ -5,12 +5,13 @@ public class Empleado {
 	// Atributos
 	String nombre, apellido, dNI, titulacion;
 	int dia, mes, anyo, nSS, nCuenta, nEmpleado, id;
-	
-	//Constructor vacio
+
+	// Constructor vacio
 	public Empleado() {
 		super();
 	}
-	//Constructor
+
+	// Constructor
 	public Empleado(String nombre, String apellido, String dNI, String titulacion, int dia, int mes, int anyo, int nSS,
 			int nCuenta, int nEmpleado, int id) {
 		super();
@@ -27,9 +28,7 @@ public class Empleado {
 		this.id = id;
 	}
 
-	
-
-	//Getters & Setters
+	// Getters & Setters
 	public String getNombre() {
 		return nombre;
 	}
